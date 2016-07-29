@@ -14,14 +14,13 @@ def receive_sms():
     message, flag = response_handler(body)
 
     if flag == 0:
-        send(fromnumber, tonumber, message)
+        resp = twilio.twiml.Response()
+        resp.message(message)
+        return str(resp)
     else:
-        send_media(fromnumber, tonumber, message)
- 
-    resp = twilio.twiml.Response()
-    resp.message(message)
-
-    return str(resp)
+        with resp.message("") as m:
+            m.media(message)
+        return str(resp)
 
 if __name__ == "__main__":
 	# Bind to PORT if defined, otherwise default to 5000.  For Heroku deployment
