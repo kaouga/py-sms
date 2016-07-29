@@ -1,15 +1,14 @@
+from random import choice
 def response_handler(body):
     message = ""
-    if body == 'start':
-        message = "You are in a boring class.  Do you 'take a nap' or 'take notes'?"
-    elif body == 'take a nap':
-        message = "You fall asleep forever...and ever...and ever.  Do you want to 'start' over?"
-    elif body == 'take notes':
-        message = "You furiously take notes as the teacher drones on.  Your friend taps you on the shoulder.  Do you 'turn around' or keep looking at your 'notes'"
-    elif body == 'turn around':
-        message = "You turn around, only to find that you have just stared into the eyes of a basilisk!  Oh well...do you want to 'start' over?"
-    elif body == 'notes':
-        message = "Unfortunately, this game is incomplete...please come back later for more!  Do you want to 'start' over?"
+    flag = 0
+    if body == 'yes':
+        message = choice(["Stop hating yourself for everything you aren't, and start loving yourself for everything you are.", "Better days are coming: They are called, Saturday and Sunday", "If plan A fails, remember that you have 25 letters left.", "Hardships often prepare ordinary people for an extraordinary destiny.", "At first, they'll ask you why you're doing it; then, they'll ask you how you're doing it.", "The greatest pleasure in life is doing what others say you can not do.", "Do something today that your future self will thank you for.", "Don't worry about those that talk behind your back. They're behind you for a reason.", "You are amazing. Remember that!", "You're off to great places!", "You are a force to be reckoned with.", "You are stronger than you think.", "By being yourself, you put somethng in the world that wasn't there before.", "Be proud of who you are and not ashamed of how others see you.", "You value doesn't decrease based on someone's inability to see your worth."])
+    elif body == 'go':
+        message = choice(["http://www.buzzle.com/img/articleImages/189660-24716-24.jpg", "https://s-media-cache-ak0.pinimg.com/564x/e8/40/54/e8405466e447aea5df831804dbd2fa98.jpg", "http://www.jamescartee.com/wp-content/uploads/2013/11/before-you-speak_william-ward-quote_edit.jpg", "http://65.media.tumblr.com/664799046a6f8a607c9a8c911e99fff9/tumblr_n7n4au1MX41rpu8e5o1_500.png", "http://motivationalreads.com/wp-content/uploads/every-accomplishment-starts-with-the-decision-to-try.jpg", "https://www.summersnowart.com/image/cache/data/IMAGES2/images3/SSW1373-1000x1000.jpg", "http://www.letssandbox.com/wp-content/uploads/2014/01/To-live-is-the-rarest-thing-in-the-world.-Most-people-exist-that-is-all..jpg", "http://data.whicdn.com/images/74844198/large.jpg", "http://spiritualcleansing.org/wp-content/uploads/2015/03/There-will-be-Haters-There-will-be-Doubters-There-will-be-Non-Believers-and-Then-there-will-be-You-Proving-them-Wrong..jpg", "http://iheartinspiration.com/wp-content/uploads/2012/03/be-a-fruit-loop-in-a-world-of-cheerios.jpg", "http://www.ldssmile.com/wp-content/uploads/2013/10/50-Inspiritational-Motivational-Thoughts-quotes-and-memes-26.jpg", "http://rollingout.com/wp-content/uploads/2014/09/Hip-Hop-Motivational-memes-Sha-Money-XL.jpg", "http://66.media.tumblr.com/tumblr_mdvni4whqY1rlzcq5o1_500.jpg"])
+        flag = 1
+    elif body == "hi":
+        message = "Hi, I hope that you're having a great day. If not, I'm here to help. Type and send 'Yes' or 'Go' to get a special surprise."
     else:
-        message = "Invalid command.  Text 'start' to restart the game.  Or text 'pic please' for a random picture"
-    return message
+        message = "Oops! We didn't get that."
+    return message, flag

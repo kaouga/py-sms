@@ -9,7 +9,7 @@ from random import choice
 account_sid = "AC1cec1be8cee5f07d7ab473d442343dcc" #input your account sid
 auth_token = "3ce6c43d410ca21ef9891f381902295e"  #input your auth_token
 fromnumber = "+12016852477" #input your twilio number
-tonumber = "+18623716063" #input your phone number
+tonumber = "+18622838869" #input your phone number
 body_text = "..." #input message
 ######################################################
 
@@ -37,14 +37,11 @@ def send_media(fromnumber, tonumber, media_links):
 
 # send(fromnumber, tonumber, body_text)
 
-# media_links = ["http://morellisicecream.com/wp-content/uploads/2014/05/MIC-3scoops-banner.png", 'https://upload.wikimedia.org/wikipedia/commons/5/55/Phillips_Academy_Andover_Coat_of_Arms.png', 'http://vignette1.wikia.nocookie.net/pokemon/images/f/fc/025Pikachu_OS_anime_5.png/revision/20150101093704', "http://all4desktop.com/data_images/original/4238212-pictures.jpg", "http://i.telegraph.co.uk/multimedia/archive/03519/potd-squirrel_3519920k.jpg", "http://i.telegraph.co.uk/multimedia/archive/03571/potd-squirrel_3571152k.jpg"]
-# send_media(fromnumber, tonumber, choice(media_links))
+media_links = ["http://morellisicecream.com/wp-content/uploads/2014/05/MIC-3scoops-banner.png", 'https://upload.wikimedia.org/wikipedia/commons/5/55/Phillips_Academy_Andover_Coat_of_Arms.png', 'http://vignette1.wikia.nocookie.net/pokemon/images/f/fc/025Pikachu_OS_anime_5.png/revision/20150101093704', "http://all4desktop.com/data_images/original/4238212-pictures.jpg", "http://i.telegraph.co.uk/multimedia/archive/03519/potd-squirrel_3519920k.jpg", "http://i.telegraph.co.uk/multimedia/archive/03571/potd-squirrel_3571152k.jpg"]
+send_media(fromnumber, tonumber, choice(media_links))
 
-user = raw_input("Enter a text to send your TWILIO number.  Or enter q to quit: \n> ")
-while user != "q":
- 	response, flag = response_handler(user)
- 	if flag == 0:
-		send(fromnumber, tonumber, response)
-	else:
-		send_media(fromnumber, tonumber, response)
-	user = raw_input("Enter a text to send your TWILIO number.  Or enter q to quit: \n> ")
+# user = raw_input("Enter a text to send your TWILIO number.  Or enter q to quit: \n> ")
+# while user != "q":
+#  	response = response_handler(user)
+# 	send(fromnumber, tonumber, response)
+# 	user = raw_input("Enter a text to send your TWILIO number.  Or enter q to quit: \n> ")
