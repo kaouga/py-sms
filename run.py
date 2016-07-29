@@ -12,9 +12,9 @@ def receive_sms():
     body = body.lower().strip()  # removes spaces and converts all to lower case
 
     message, flag = response_handler(body)
+    resp = twilio.twiml.Response()
 
     if flag == 0:
-        resp = twilio.twiml.Response()
         resp.message(message)
         return str(resp)
     else:
